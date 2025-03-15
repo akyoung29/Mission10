@@ -1,3 +1,7 @@
+export interface Team {
+    teamID: number;
+    teamName: string;
+}
 export interface Bowler {
     bowlerID: number;
     bowlerLastName: string;
@@ -9,4 +13,5 @@ export interface Bowler {
     bowlerZip: string;
     bowlerPhoneNumber: string;
     teamID: number;
+    team: Team;
 }
