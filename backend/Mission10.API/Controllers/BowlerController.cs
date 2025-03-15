@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Mission10.API.Data;
 
 namespace Mission10.API.Controllers
@@ -16,7 +17,7 @@ namespace Mission10.API.Controllers
 
         public IEnumerable<Bowler> GetBowler()
         {
-            return _context.Bowlers.ToList();
+            return _context.Bowlers.Include(b => b.Team).ToList();
         }
     }
 }
